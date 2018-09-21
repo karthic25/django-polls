@@ -1,0 +1,20 @@
+{% extends 'polls/layout.html' %}
+
+{% block content %}
+<h3>{{ question.question_text }}</h3>
+
+<p class="red-text" id="error_message" style="display: none;"><strong>You didn't select a choice.</strong></p>
+
+<form action="{% url 'polls:vote' question.id %}" method="post">
+{% csrf_token %}
+{% for choice in question.choice_set.all %}
+	<p>
+		<label for="choice{{ forloop.counter }}"/>
+	    <input type="radio" class="with-gap" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+	    <span>{{ choice.choice_text }}</span>
+	</p>
+{% endfor %}
+<input type="button" id="Vote" value="Vote">
+</form><br>
+<a href="{% url 'polls:index' %}" id="temp">Back to Questionairre</a>
+{% endblock %}
