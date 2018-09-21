@@ -12,21 +12,25 @@
 	<title>Polling</title>
 </head>
 <body>
-	<nav class="pink" role="navigation">
-	    <div class="nav-wrapper container">
-	        <a id="logo-container" href="#" class="brand-logo pink-text text-lighten-5">Logo</a>
-	        <ul class="right hide-on-med-and-down pink-text text-lighten-5">
-	            <li><a href="#">Navbar Link</a></li>
-	        </ul>
-	        <ul id="nav-mobile" class="sidenav pink-text text-lighten-5">
-	            <li><a href="#">Navbar Link</a></li>
-	        </ul>
-	        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-	    </div>
-	</nav>
+		<nav class="pink" role="navigation">
+		    <div class="nav-wrapper container">
+		        <a id="logo-container" href="#" class="brand-logo">Logo</a>
+		        <ul class="right hide-on-med-and-down">
+		            <li><a href="#">Navbar Link</a></li>
+		            <li><a href="#">Navbar Link</a></li>
+		            <li><a href="#">Navbar Link</a></li>
+		        </ul>
+		        <ul id="nav-mobile" class="sidenav">
+		            <li><a href="#">Navbar Link</a></li>
+		            <li><a href="#">Navbar Link</a></li>
+		            <li><a href="#">Navbar Link</a></li>
+		        </ul>
+		        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+		    </div>
+		</nav>
 
-	<div class="section blue" id="index-banner">
-        <h1 class="header center blue-text text-lighten-4">Poll Questions</h1>
+		<div class="section blue" id="index-banner">
+        <h1 class="header center blue-text text-lighten-4" id="temp">Poll Questions</h1>
         <div class="row">
             <div class="col s8 offset-s2 blue-text text-lighten-4">
             {% block content %}
@@ -46,15 +50,18 @@
 		</div>
 	</div>
 
-	<div class="footer-copyright teal">
+	<div class="footer-copyright teal teal-text text-lighten-3">
 		<div class="container">
 			<div class="section center">
-				Made by <a class="brown-text text-lighten-3" href="http://github.com/karthic25/">Karthic</a>
+				Made by <a class="teal-text text-darken-4" href="http://github.com/karthic25/">Karthic</a>
 			</div>
 		</div>
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<script src="{% static 'polls/js/mandatory_question.js' %}"></script>
+  	<script src="{% static 'polls/js/initiate.js' %}"></script>
+
 </body>
 </html>
