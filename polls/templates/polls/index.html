@@ -2,11 +2,11 @@
 
 {% block content %}
 {% if latest_question_list %}
-    <ul>
+	<div class="collection">
     {% for question in latest_question_list %}
-        <li><a href="{% url 'polls:details' question.id %}">{{ question.question_text }}</a></li>
+        <a href="{% url 'polls:details' question.id %}" class="collection-item blue lighten-1 blue-text text-lighten-5">{{ question.question_text }}</a>
     {% endfor %}
-    </ul>
+	</div>
 {% else %}
     <p>No polls are available.</p>
 {% endif %}

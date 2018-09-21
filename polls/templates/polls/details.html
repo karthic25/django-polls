@@ -7,14 +7,16 @@
 
 <form action="{% url 'polls:vote' question.id %}" method="post">
 {% csrf_token %}
+<div class="collection">
 {% for choice in question.choice_set.all %}
-	<p>
+	<p class="collection-item blue lighten-1 blue-text text-lighten-5">
 		<label for="choice{{ forloop.counter }}"/>
 	    <input type="radio" class="with-gap" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
-	    <span>{{ choice.choice_text }}</span>
+	    <span class="blue-text text-lighten-4">{{ choice.choice_text }}</span>
 	</p>
 {% endfor %}
+</div>
 <input type="button" id="Vote" value="Vote">
 </form><br>
-<a href="{% url 'polls:index' %}" id="temp">Back to Questionairre</a>
+<a href="{% url 'polls:index' %}" class="blue-text text-lighten-4">Back to Questionairre</a>
 {% endblock %}
