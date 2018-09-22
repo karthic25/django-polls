@@ -8,7 +8,7 @@
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-	<!-- <link rel="stylesheet" type="text/css" href="{% static 'polls/css/style.css' %}"> -->
+	<!-- <link rel="stylesheet" type="text/css" class="Static" href="{% static 'polls/css/style.css' %}"> -->
 	<title>Polling</title>
 </head>
 <body>
@@ -61,8 +61,12 @@
 	<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
   	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-	<script src="{% static 'polls/js/mandatory_question.js' %}"></script>
-  	<script src="{% static 'polls/js/initiate.js' %}"></script>
+    <!-- Adding random string to all Static files to avoid caching -->
+  	<script type="text/javascript">
+  		document.getElementsByClassName("Static").src += "?" + (new Date).getTime();
+  	</script>
+	<script class="Static" src="{% static 'polls/js/mandatory_question.js' %}"></script>
+  	<script class="Static" src="{% static 'polls/js/initiate.js' %}"></script>
 
 </body>
 </html>
